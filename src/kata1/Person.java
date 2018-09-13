@@ -1,35 +1,32 @@
 
 package kata1;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import javafx.scene.chart.PieChart.Data;
+import java.time.LocalDate;
+import java.time.Period;
+
+
 
 
 public class Person {
     private final String name;
-    private final Calendar birthdate;
-    private final long MILLISECOND_PER_YEAR = (long)(60*60*1000*24*365.25);
-
-    public Person(String name, Calendar birthdate){
+    private final LocalDate fn ;
+    
+    public Person(String name, LocalDate fn){
         this.name = name;
-        this.birthdate = birthdate;
+        this.fn = fn;
     }
     public String getName() {
         return name;
     }
 
-    public Calendar getBirthdate() {
-        return birthdate;
+    public LocalDate getBirthdate() {
+        return fn;
     }
 
     public int getAge(){
-        Calendar today = GregorianCalendar.getInstance();
-        return (int)(milliSecondsToYear(today.getTimeInMillis() -
-                    birthdate.getTimeInMillis()));
+        LocalDate fa = LocalDate.now();
+        return (int)(Period.between(fn,fa).getYears());
     }
     
-    private long milliSecondsToYear(long milles){
-        return milles / MILLISECOND_PER_YEAR;
-    }
+    
 }

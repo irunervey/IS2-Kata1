@@ -1,8 +1,10 @@
 
 package kata1;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.Month;
+
+
 
 
 
@@ -11,9 +13,8 @@ public class Kata1 {
 
     
     public static void main(String[] args) {
-        Calendar date;
-        date = GregorianCalendar.getInstance();
-        date.set(1997,5,24);
+        LocalDate date;
+        date = LocalDate.of(1997, Month.MAY, 24);
         Person person = new Person("Iru", date);
         System.out.println(person.getName() + " tiene " + person.getAge() + " años");
     }
