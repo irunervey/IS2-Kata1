@@ -16,7 +16,8 @@ public class Kata1 {
         LocalDate date;
         date = LocalDate.of(1997, Month.MAY, 24);
         Person person = new Person("Iru", date);
-        System.out.println(person.getName() + " tiene " + person.getAge() + " años");
+        System.out.println(person.getName() + " tiene " + 
+                person.getAge() + " años");
     }
     
 }
